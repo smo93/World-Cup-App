@@ -2,6 +2,7 @@ var changeTime = function (matches) {
     matches.forEach(function (match, i) {
         var date = new Date(match.datetime);
         var newTime = date.toLocaleTimeString();
+        newTime = newTime.slice(0, newTime.length - 3)
         matches[i].startTime = newTime;
 
     });
