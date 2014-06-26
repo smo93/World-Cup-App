@@ -5,3 +5,4 @@ body { background: #efefef; }
 .results { background: #e5e5e5; border: 5px solid #fcfcfc; height: 300px; margin: 20px 0; text-align: center; padding-top: 20px; }
 .progress { width: 50%; margin: auto; }
 .progress-bar { width: 45%; }
+.right { float: right; }
