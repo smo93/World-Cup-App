@@ -24,12 +24,23 @@ var editProgressTime = function (matches) {
     return matches;
 }
 
+var loadMatches = function(template, matches ){
+    var result = "";
+matches.forEach(function(match){
+    result += template(match);
+});
+    return result;
+};
+
 $(document).ready(function () {
+    var source   = $("#result-block").html();
+    var template = Handlebars.compile(source);
     $.getJSON('http://worldcup.sfg.io/matches/today', function (matches) {
         matches = matches;
         matches = changeTime( matches);
         matches= editProgressTime(matches);
         console.log(matches);
+        $("#main").append(loadMatches(template, matches));
 
         setInterval(function () {
          matches = editProgressTime(matches);
