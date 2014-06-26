@@ -32,19 +32,25 @@
                         </div><br />
                         <h4> <span id="minutesLeft">{{progressTime}}</span> minutes passed.</h4>
                     {{else}}
-                        <h4>The game starts at: {{startTime}}</h4>
+                        {{#if completed}}
+                            <h4>The game have finished.</h4>
+                        {{else}}
+                            <h4>The game starts at: {{startTime}}</h4>
+                        {{/if}}
                     {{/if}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-3"></div>
                 <div class="col-xs-3">
-                    <img class="flag" src="./flags/{{home_team.code}}.png" data-toggle="popover" data-placement="top" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
+                    <span>{{home_team.country}}</span>
+                    <img class="flag" src="./flags/{{home_team.code}}.png" data-country="{{home_team.country}}" data-toggle="popover" data-placement="top" />
                     <span class="home-goals">{{home_team.goals}}</span>
                 </div>
                 <div class="col-xs-3">
                     <span class="home-goals">{{away_team.goals}}</span>
-                    <img class="flag" src="./flags/{{away_team.code}}.png" data-toggle="popover" data-placement="top" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">>
+                    <img class="flag" src="./flags/{{away_team.code}}.png" data-country="{{away_team.country}}" data-toggle="popover" data-placement="top" />
+                    <span>{{away_team.country}}</span>
                 </div>
                 <div class="col-xs-3"></div>
             </div>
@@ -52,7 +58,7 @@
     </script>
 
     <script id="info-pop" type="text/x-handlebars-template">
-        
+        {{country}} is in {{group_letter}} group. With {{wins}} wins, {{losses}} losses and {{games_played}} games played.
     </script>
 
 
