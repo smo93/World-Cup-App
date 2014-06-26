@@ -14,7 +14,63 @@
         </div>
 
         <div id="main" class="row">
+        <div id="{{match_number}}" class="results row">
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="progres" class="col-xs-10">
+                    {{#if progres}}
+                        <div class="progres-bar"></div>
+                        <h4>{{progres}} minutes left.</h4>
+                    {{else}}
+                        <h4>The game starts at: {{datetime}}</h4>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3">
+                    <img class="flag" src="./flags/{{home_team.code}}.png">
+                    <span class="home-goals">{{home_team.goals}}</span>
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3">
+                    <span class="home-goals">{{away_team.goals}}</span>
+                    <img class="flag" src="./flags/{{away_team.code}}.png">
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
         </div>
     </div>
+
+    <script id="result-block" type="text/x-handlebars-template">
+        <div id="{{match_number}}" class="results row">
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="progres" class="col-xs-10">
+                    {{#if progres}}
+                        <div class="progres-bar"></div>
+                        <h4>{{progres}} minutes left.</h4>
+                    {{else}}
+                        <h4>The game starts at: {{datetime}}</h4>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3">
+                    <img class="flag" src="./flags/{{home_team.code}}.png">
+                    <span class="home-goals">{{home_team.goals}}</span>
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-3">
+                    <img class="flag" src="./flags/{{away_team.code}}.png">
+                    <span class="home-goals">{{away_team.goals}}</span>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+        </div>
+    </script>
+
 </body>
 </html>
