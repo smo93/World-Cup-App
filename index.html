@@ -21,7 +21,7 @@
 
 
     <script id="result-block" type="text/x-handlebars-template">
-        <div id="{{match_number}}" class="results row">
+        <div id="{{match_number}}" class="results row" >
             <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="col-xs-8">
@@ -39,12 +39,12 @@
             <div class="row">
                 <div class="col-xs-3"></div>
                 <div class="col-xs-3">
-                    <img class="flag" src="./flags/{{home_team.code}}.png">
+                    <img class="flag" src="./flags/{{home_team.code}}.png" data-toggle="popover" data-placement="top" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">
                     <span class="home-goals">{{home_team.goals}}</span>
                 </div>
                 <div class="col-xs-3">
                     <span class="home-goals">{{away_team.goals}}</span>
-                    <img class="flag" src="./flags/{{away_team.code}}.png">
+                    <img class="flag" src="./flags/{{away_team.code}}.png" data-toggle="popover" data-placement="top" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">>
                 </div>
                 <div class="col-xs-3"></div>
             </div>
