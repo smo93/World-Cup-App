@@ -14,8 +14,45 @@
         </div>
 
         <div id="main" class="row">
+            
         </div>
     </div>
+
+
+
+    <script id="result-block" type="text/x-handlebars-template">
+        <div id="{{match_number}}" class="results row">
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="progress" class="col-xs-10">
+                    {{#if progres}}
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div><br />
+                        <h4>{{progres}} minutes left.</h4>
+                    {{else}}
+                        <h4>The game starts at: {{datetime}}</h4>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <img class="flag" src="./flags/{{home_team.code}}.png">
+                    <span class="home-goals">{{home_team.goals}}</span>
+                </div>
+                <div class="col-xs-3">
+                    <img class="flag" src="./flags/{{away_team.code}}.png">
+                    <span class="home-goals">{{away_team.goals}}</span>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+        </div>
+    </script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="app.js"></script>

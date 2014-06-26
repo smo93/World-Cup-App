@@ -1,4 +1,7 @@
 * { margin: 0; padding: 0; }
 body { background: #efefef; }
 #header { text-align: center; color: #272727; background: #57b7dd; }
-#main { background: #fcfcfc; height: 100px; }
+#main { background: #fcfcfc; }
+.results { background: #e5e5e5; border: 5px solid #fcfcfc; height: 300px; margin: 20px 0; text-align: center; padding-top: 20px; }
+.progress { width: 50%; margin: auto; }
+.progress-bar { width: 45%; }
