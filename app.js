@@ -20,6 +20,8 @@ var editProgressTime = function (matches) {
             var progress = currentTime - matchTime;
             progress = parseInt(progress/(1000*60));
             matches[i].progressTime = progress;
+            $("#minutesLeft").text(progress);
+            console.log($("#minutesLeft"));
         }
     });
     return matches;
@@ -37,7 +39,6 @@ $(document).ready(function () {
     var source   = $("#result-block").html();
     var template = Handlebars.compile(source);
     $.getJSON('http://worldcup.sfg.io/matches/today', function (matches) {
-        matches = matches;
         matches = changeTime( matches);
         matches= editProgressTime(matches);
         console.log(matches);
@@ -45,9 +46,7 @@ $(document).ready(function () {
 
         setInterval(function () {
          matches = editProgressTime(matches);
-            console.log(matches);
-        }, 1000*60);
+        }, 60000);
     });
-
 
 });
