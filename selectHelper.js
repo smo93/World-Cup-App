@@ -1,8 +1,8 @@
 Handlebars.registerHelper('select', function(items, options) {
-    var out = '<select class="form-control">';
+    var out = '<select class="form-control"><option value="NULL">Select team...</option>';
 
     items.forEach(function(item) {
-        out += ['<option value="', options.fn(item), '">', options.fn(item), '</option>'].join('');
+        out += ['<option value="', item.fifa_code, '">', item.country, '</option>'].join('');
     });
 
     out += '</select>';
