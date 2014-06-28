@@ -50,8 +50,9 @@ $(document).ready(function () {
 
         $("#main").append(loadMatches(template, matches));
 
+        updateProgressBars(matches);
+
         $.getJSON('http://worldcup.sfg.io/teams/results', function(teams) {
-            console.log(teams);
             $('.flag').each(function() {
                 var $this = $(this),
                     country = $this.data('country'),
@@ -61,12 +62,22 @@ $(document).ready(function () {
                 $this.data('content', popover_content);
                 $this.popover({toggle : 'click'});
             });
-            console.log('done');
+            setInterval(function () {
+                matches = editProgressTime(matches);
+            }, 60000);
+
         });
 
-
-        setInterval(function () {
-            matches = editProgressTime(matches);
-        }, 60000);
     });
+
+    function updateProgressBars(matches) {
+        matches.filter(function(match) { return match.status === 'in progress'; })
+            .forEach(function(match) {
+                if(match.progressTime <= 90) {
+                    $('#' + match.match_number).find('.progress-bar').width(((match.progressTime / 90) * 100).toString() + '%');
+                } else {
+                    $('#' + match.match_number).find('.progress-bar').width('100%');
+                }
+            });
+    }
 });
