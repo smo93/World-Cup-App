@@ -19,16 +19,16 @@
     </div>
 
     <script id="selector" type="text/x-handlebars-template">
-        <div id="{{id}}" class="col-xs-4">
+        <div id="{{id}}" class="col-xs-4 center">
             {{#select teams}}{{fifa_code}} {{country}}{{/select}}
         </div>
     </script>
 
-    <script id="team_info" type="text/x-handlebars-template">
-        <p>Wins: {{wins}}</p>
-        <p>Losses: {{losses}}</p>
-        <p>Draws: {{draws}}</p>
-        <p>Points: {{points}}</p>
+    <script id="team-info" type="text/x-handlebars-template">
+        <p class="alert alert-success">Wins: {{wins}}</p>
+        <p class="alert alert-success">Losses: {{losses}}</p>
+        <p class="alert alert-success">Draws: {{draws}}</p>
+        <p class="alert alert-success">Points: {{points}}</p>
     </script>
 
     <script src="bower_components/handlebars/handlebars.js"></script>
