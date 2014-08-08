@@ -1,0 +1,9 @@
+* { margin: 0; padding: 0; }
+body { background: #efefef; }
+a { color: #272727; }
+#header { text-align: center; color: #272727; background: #57b7dd; }
+#main { background: #fcfcfc; padding: 20px 0; }
+#footer { text-align: center; color: #272727; background: #57b7dd; padding: 5px 0; }
+.results { background: #e5e5e5; border: 5px solid #fcfcfc; margin: 20px 0; text-align: center; padding-top: 20px; padding-bottom: 20px; }
+.progress { width: 50%; margin: auto; }
+.center { text-align: center; }

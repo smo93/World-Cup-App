@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <title>World Cup Results</title>
+
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+</body>
+
+    <div id="contents" class="container">
+        <div id="header" class="row">
+            <h2>Hack Bulgaria World Cup</h2>
+        </div>
+
+        <div id="main" class="row">
+
+        </div>
+
+        <div id="footer" class="row">
+            <a href="./index.html">Home</a>
+        </div>
+    </div>
+
+    <script id="selector" type="text/x-handlebars-template">
+        <div id="{{id}}" class="col-xs-4 center">
+            {{#select teams}}{{fifa_code}} {{country}}{{/select}}
+        </div>
+    </script>
+
+    <script id="team-info" type="text/x-handlebars-template">
+        <p class="alert alert-success wins">Wins: {{wins}}</p>
+        <p class="alert alert-success losses">Losses: {{losses}}</p>
+        <p class="alert alert-success draws">Draws: {{draws}}</p>
+        <p class="alert alert-success points">Points: {{points}}</p>
+    </script>
+
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="selectHelper.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="comp.js"></script>
+</body>
+</html>
